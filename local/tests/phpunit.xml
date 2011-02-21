@@ -1,0 +1,13 @@
+<phpunit>
+  <filter>
+    <blacklist>
+      <directory suffix=".php">/home/andrewrumble/workspace/vertex/vertex/</directory>
+      <exclude>
+        <directory suffix=".php">/home/andrewrumble/workspace/vertex/vertex/local/courseassignment</directory>
+      	<directory suffix=".php">/home/andrewrumble/workspace/vertex/vertex/local/shared/lib</directory>
+      	<directory suffix=".php">/home/andrewrumble/workspace/vertex/vertex/local/shared/models</directory>
+      </exclude>
+      
+    </blacklist>
+  </filter>
+</phpunit>
