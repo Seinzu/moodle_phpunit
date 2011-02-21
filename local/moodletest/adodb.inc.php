@@ -906,8 +906,7 @@
 			
 		}
 		if ($this->debug) {
-			global $ADODB_INCLUDED_LIB;
-			if (empty($ADODB_INCLUDED_LIB)) include(ADODB_DIR.'/adodb-lib.inc.php');
+			include_once(ADODB_DIR.'/adodb-lib.inc.php');
 			$this->_queryID = _adodb_debug_execute($this, $sql,$inputarr);
 		} else {
 			$this->_queryID = @$this->_query($sql,$inputarr);
@@ -1604,8 +1603,7 @@
          return;
       } 
       
-      global $ADODB_INCLUDED_CSV;
-      if (empty($ADODB_INCLUDED_CSV)) include(ADODB_DIR.'/adodb-csvlib.inc.php');
+      include_once(ADODB_DIR.'/adodb-csvlib.inc.php');
       
       $f = $this->_gencachename($sql.serialize($inputarr),false);
       adodb_write_file($f,''); // is adodb_write_file needed?
@@ -1891,8 +1889,7 @@
   	 */
 	function GetUpdateSQL(&$rs, $arrFields,$forceUpdate=false,$magicq=false,$force=null)
 	{
-		global $ADODB_INCLUDED_LIB;
-
+		
         //********************************************************//
         //This is here to maintain compatibility
         //with older adodb versions. Sets force type to force nulls if $forcenulls is set.
@@ -1902,7 +1899,7 @@
 		}
 		//********************************************************//
 
-		if (empty($ADODB_INCLUDED_LIB)) include(ADODB_DIR.'/adodb-lib.inc.php');
+		include_once(ADODB_DIR.'/adodb-lib.inc.php');
 		return _adodb_getupdatesql($this,$rs,$arrFields,$forceUpdate,$magicq,$force);
 	}
 
@@ -1916,13 +1913,11 @@
   	 */
 	function GetInsertSQL($rs, $arrFields,$magicq=false,$force=null)
 	{	
-		global $ADODB_INCLUDED_LIB;
 		if (!isset($force)) {
 			global $ADODB_FORCE_TYPE;
 			$force = $ADODB_FORCE_TYPE;
-			
 		}
-		if (empty($ADODB_INCLUDED_LIB)) include_once(ADODB_DIR.'/adodb-lib.inc.php');
+		include_once(ADODB_DIR.'/adodb-lib.inc.php');
 		
 		return _adodb_getinsertsql($this,$rs,$arrFields,$magicq,$force);
 	}
@@ -3782,9 +3777,7 @@ http://www.stanford.edu/dept/itss/docs/oracle/10g/server.101/b10759/statements_1
 		
 		function _transpose($addfieldnames=true)
 		{
-		global $ADODB_INCLUDED_LIB;
-			
-			if (empty($ADODB_INCLUDED_LIB)) include(ADODB_DIR.'/adodb-lib.inc.php');
+			include_once(ADODB_DIR.'/adodb-lib.inc.php');
 			$hdr = true;
 			
 			$fobjs = $addfieldnames ? $this->_fieldobjects : false;
