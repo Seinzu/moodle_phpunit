@@ -9,3 +9,7 @@
 phpunit --color --verbose AllTests
 </pre>  
 and the tests will run.
+
+### Compatibility
+
+This has been used with several versions of Moodle that are minor versions of 1.9.  The majority of use has been with PHP 5.2 and 5.3 and MySQL although it has been used very briefly with a MSSQL database.
