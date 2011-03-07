@@ -1,14 +1,21 @@
 ### INSTALLATION
 
 * If you have a local modifications directory then copy the directories under local into that directory.  
-* Create a copy of config-dist.php or config.php from the root as config-test.php in the same directory.
-* In config-test.php remove the line that calls lib/setup.php, this is replaced by a Moodle test version which fixes some problems PHPUnit has with the moodle database lib.
+* Create a copy of the config-test.php file provided and fill in the details for your test environment.
 * You are now ready to add test suites into the local/tests directory.
 * Once you have some good tests suites you can go into local/tests and run a command like
 <pre>
 phpunit --color --verbose AllTests
 </pre>  
 and the tests will run.
+
+### Test Suites
+
+The recommended way to do this is to mimic the layout of the moodle directory. If you want to test an auth plugin, those tests should go in:
+<pre>
+<MOODLE ROOT>/local/tests/auth/<pluginname>/<testname.php>
+</pre>
+
 
 ### Compatibility
 
