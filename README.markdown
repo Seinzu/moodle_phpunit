@@ -13,7 +13,7 @@ and the tests will run.
 
 The recommended way to do this is to mimic the layout of the moodle directory. If you want to test an auth plugin, those tests should go in:
 <pre>
-[MOODLE ROOT]/local/tests/auth/<pluginname>/[testname.php]
+[MOODLE ROOT]/local/tests/auth/[pluginname]/[testname.php]
 </pre>
 
 
