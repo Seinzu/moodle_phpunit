@@ -20,3 +20,7 @@ The recommended way to do this is to mimic the layout of the moodle directory. I
 ### Compatibility
 
 This has been used with several versions of Moodle that are minor versions of 1.9.  The majority of use has been with PHP 5.2 and 5.3 and MySQL although it has been used very briefly with a MSSQL database.
+
+### Troubleshooting
+
+* If you get "Fatal: $CFG->wwwroot is not configured!" then you need to check that $CFG is declared global in config-test.php (check the example provided for more detail).
